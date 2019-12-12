@@ -56,7 +56,7 @@ def main():
     # Obtain current path.
     dirpath = os.getcwd()
     # Instantiating the class (for constants).
-    filename_extractor =  Determine_Filenames(dirpath)
+    filename_extractor = Determine_Filenames(dirpath)
     # Call the method to obtain list of all csv files in current path.
     csv_file_list, directory = filename_extractor.convert()
 
