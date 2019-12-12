@@ -47,10 +47,10 @@ class Disbursement_Extractor:
         # Convert values from object to float.
         df['PP Total'] = df['PP Total'].astype(float)
         # Sum values and round float to 2 decimal places.
-        sum_of_assembly_fees = df['PP Total'].sum()
-        sum_of_assembly_fees = round(sum_of_assembly_fees, 2)
+        sum_of_fees = df['PP Total'].sum()
+        sum_of_fees = round(sum_of_fees, 2)
 
-        return sum_of_assembly_fees
+        return sum_of_fees
 
 def main():
     # Obtain current path.
