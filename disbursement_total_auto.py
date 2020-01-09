@@ -9,7 +9,7 @@ import os
 import glob
 # Class names should follow the UpperCaseCamelCase convention.
 class Determine_Filenames:
-    
+
     # Constructor: Instance variable names should be all lower case.
     def __init__(self, dirpath):
         self.dirpath = dirpath
@@ -40,14 +40,14 @@ class Disbursement_Extractor:
             df = pd.DataFrame.from_dict(reader)
 
         # Remove all empty rows from dataframe.
-        df = df[df['PP Total'].str.strip().astype(bool)]
+        df = df[df['Total'].str.strip().astype(bool)]
         # Remove , and $ from values.
-        df['PP Total'] = df['PP Total'].str.replace(',', '')
-        df['PP Total'] = df['PP Total'].str.replace('$', '')
+        df['Total'] = df['Total'].str.replace(',', '')
+        df['Total'] = df['Total'].str.replace('$', '')
         # Convert values from object to float.
-        df['PP Total'] = df['PP Total'].astype(float)
+        df['Total'] = df['Total'].astype(float)
         # Sum values and round float to 2 decimal places.
-        sum_of_fees = df['PP Total'].sum()
+        sum_of_fees = df['Total'].sum()
         sum_of_fees = round(sum_of_fees, 2)
 
         return sum_of_fees
